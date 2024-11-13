@@ -1,0 +1,6 @@
+{
+    "watch": ["src"],
+    "ext": "ts",
+    "ignore": ["src/**/*.spec.ts"],
+    "exec": "tsc && nest start --debug --inspect=0.0.0.0:9229 --watch"
+  }
