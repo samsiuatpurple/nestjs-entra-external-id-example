@@ -37,3 +37,14 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
+
+## TypeOrm
+Generate db migration 
+```
+npm run typeorm migration:generate './src/database/migrations/<migration name>' -- -d './src/app-datasource.ts' 
+```
+
+Run db migration
+```
+npm run typeorm migration:run -- -d './src/app-datasource.ts'
+```
