@@ -1,24 +1,12 @@
-import { Controller, Get, UseGuards } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
 import { AppService } from './app.service';
-import { AuthGuard } from '@nestjs/passport';
-import { AzureADStrategyName } from './authentication/strategies/entraid.strategy';
 
-@Controller('api')
+@Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+    constructor(private readonly appService: AppService) {}
 
-  @Get('unprotected')
-  getHello(): string {
-    return this.appService.getHello();
-  }
-
-  @UseGuards(AuthGuard(AzureADStrategyName))
-  @Get('protected')
-  getProtected(): ProtectedDto {
-    return { message: 'protected' };
-  }
+    @Get('unprotected')
+    getHello(): string {
+        return this.appService.getHello();
+    }
 }
-
-type ProtectedDto = {
-  message: string;
-};

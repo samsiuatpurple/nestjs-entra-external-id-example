@@ -14,7 +14,7 @@ const ProtectedContents = () => {
 
     useEffect(() => {
         if (!protectedContent) {
-            execute("GET", `${protectedResources.baseAPIEndpoint.endpoint}/protected`).then((response) => {
+            execute("GET", `${protectedResources.baseAPIEndpoint.endpoint}/secret`).then((response) => {
                 setProtectedContent(response);
             });
         }
